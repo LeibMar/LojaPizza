@@ -1,12 +1,14 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-    <title>Order Confirmation</title>
+    <title>Confirmar pedido<</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <h1>Order Confirmation</h1>
-    <p>Thank you, {{ $user->name }}, for your order!</p>
-    <p>You have ordered {{ $pizza->name }}. Enjoy your meal!</p>
-    <a href="{{ route('pizza.index') }}">Back to Menu</a>
+    <h1>Confirmar pedido</h1>
+    <p>Obrigado, {{ $user->name }}, pelo pedido!</p>
+    <p>Você pediu{{ $pizza->name }}. </p>
+    <a href="{{ route('pizza.index') }}">Voltar</a>
 </body>
 </html>

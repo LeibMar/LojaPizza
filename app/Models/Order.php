@@ -7,5 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'user_id', 'pizza_id',
+    ];
+
+    public function pizza()
+    {
+        return $this->belongsTo(Pizza::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

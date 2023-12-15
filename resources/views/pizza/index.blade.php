@@ -1,15 +1,16 @@
 @if($user)
-    <p>Welcome, {{ $user->name }}!</p>
+    <p>Bem vindo, {{ $user->name }}!</p>
 @else
-    <p>Welcome, Guest!</p>
+    <p>Bem vindo!</p>
 @endif
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Pizza Delivery</title>
+    <title>PizzaAgora</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <h1>Pizza Menu</h1>
+    <h1>Cardápio</h1>
     <ul>
         @foreach($pizzas as $pizza)
             <li>
