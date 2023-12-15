@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/pizza', [PizzaController::class, 'index'])->name('pizza.index');
+Route::get('/pizza/{id}', [PizzaController::class, 'show'])->name('pizza.show');
+Route::post('/pizza/{id}/confirm-order', [PizzaController::class, 'confirmOrder'])->name('pizza.confirmOrder');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
